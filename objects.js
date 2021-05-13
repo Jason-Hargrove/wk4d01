@@ -1,18 +1,7 @@
-// /*
-// dont forget to make your git repo don't do this in repl.it
-// for help purposes only
-// Hamster
-// attributes: line 20
-// owner - string, initially set as an empty string line 21
-// name - string, set the name from parameter in constructor method line 22 and the param in line 20
-// price - integer, set as 15. line 23
-// methods: below line 25
-// wheelRun() - log "squeak squeak" line 26
-// eatFood() - log "nibble nibble" line 29
-// getPrice() - return the price line 32
-// */
+const hamsterArr = [];
+
 class Hamster {
-  constructor(name) { // name is the parameter
+  constructor(name) {
     this.owner = '';
     this.name = name;
     this.price = 15;
@@ -27,14 +16,12 @@ class Hamster {
     return this.price;
   }
 }
-const Gus = new Hamster('Gus'); // <=== Argument is GUs
-const somevar = 'somevalue';
-
 
 class Person {
   constructor(name) {
     this.name = name;
     this.age = 0;
+    this.height = 0;
     this.weight = 0;
     this.mood = 0;
     this.hamsters = '';
@@ -50,35 +37,26 @@ class Person {
     return this.weight;
   }
   greet()  {
-    console.log(this.name);
+    console.log(`Hello. My name is ${this.name}`);
   }
   eat() {
-    return this.name;
+    this.weight++;
+    this.mood++;
   }
   exercise() {
-    return this.name;
+    this.weight--;
   }
+  ageUP() {
+    this.age++;
+    this.height++;
+    this.weight++;
+    this.mood--;
+    this.bankAccount += 10;
+}
   buyHamster(hamster) {
     return this.name;
+    hamsterArr.push(this.hamster);
+    this.mood += 10;
+    this.bankAccount -= this.hamster.getPrice();
   }
 }
-
-
-console.log('You suck!');
-
-
-
-
-/*
-dont forget to make your git repo don't do this in repl.it
-for help purposes only
-Hamster
-attributes: line 20
-owner - string, initially set as an empty string line 21
-name - string, set the name from parameter in constructor method line 22 and the param in line 20
-price - integer, set as 15. line 23
-methods: below line 25
-wheelRun() - log "squeak squeak" line 26
-eatFood() - log "nibble nibble" line 29
-getPrice() - return the price line 32
-*/
