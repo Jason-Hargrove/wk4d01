@@ -1,22 +1,22 @@
-const hamsterArr = [];
-
+// hamster class
 class Hamster {
   constructor(name) {
     this.owner = '';
     this.name = name;
     this.price = 15;
   }
-  wheelRun(){
+  wheelRun() {
     console.log('squeak squeak');
   }
-  eatFood(){
+  eatFood() {
     console.log('nibble nibble');
   }
-  getPrice(){
+  getPrice() {
     return this.price;
   }
 }
 
+// person class
 class Person {
   constructor(name) {
     this.name = name;
@@ -24,19 +24,19 @@ class Person {
     this.height = 0;
     this.weight = 0;
     this.mood = 0;
-    this.hamsters = '';
+    this.hamsters = [];
     this.bankAccount = 0;
   }
   getName() {
     return this.name;
   }
-  getAge()  {
+  getAge() {
     return this.age;
   }
   getWeight() {
     return this.weight;
   }
-  greet()  {
+  greet() {
     console.log(`Hello. My name is ${this.name}`);
   }
   eat() {
@@ -46,17 +46,80 @@ class Person {
   exercise() {
     this.weight--;
   }
-  ageUP() {
+  ageUp() {
     this.age++;
     this.height++;
     this.weight++;
     this.mood--;
     this.bankAccount += 10;
-}
+  }
   buyHamster(hamster) {
-    return this.name;
-    hamsterArr.push(this.hamster);
+    this.hamsters.push(hamster);
     this.mood += 10;
-    this.bankAccount -= this.hamster.getPrice();
+    this.bankAccount -= hamster.getPrice();
   }
 }
+
+
+// create a story with your person class
+
+// 1.
+const timmy = new Person('Timmy');
+
+// 2.
+const ageTimmy5 = () => {
+  for (let i = 0; i < 5; i++) {
+    timmy.ageUp();
+  }
+}
+ageTimmy5();
+
+// 3.
+const timmyEat5 = () => {
+  for (let i = 0; i < 5; i++) {
+    timmy.eat();
+  }
+}
+timmyEat5()
+
+// 4.
+const timmyWorkOut = () => {
+  for (let i = 0; i < 5; i++) {
+    timmy.exercise();
+  }
+}
+timmyWorkOut();
+
+// 6.
+const gus = new Hamster('Gus');
+
+// 7.
+gus.owner = timmy;
+
+// 8.
+timmy.buyHamster(gus);
+
+// 9.
+const ageTimmy15 = () => {
+  for (let i = 0; i < 15; i++) {
+    timmy.ageUp();
+  }
+}
+ageTimmy15();
+
+// 10.
+timmy.eat();
+timmy.eat();
+
+// 11.
+timmy.exercise();
+timmy.exercise();
+
+
+console.log(`${timmy.name} and
+
+ O-------O
+(  '(X)'  )
+C('')_('')
+
+${gus.name}`);
